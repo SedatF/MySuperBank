@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BankStuffLibrary;
+using System;
+
 
 namespace MySuperBank
 {
@@ -6,9 +8,13 @@ namespace MySuperBank
     {
         static void Main(string[] args)
         {
-            var account = new BankAccount("Irvan", 100000);
+            var account = new BankAccount("Sedat", 10000);
             Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance}");
-            account.MakeWithdrawal(25000, DateTime.Now, "Bayar Listrik");
+            account.MakeWithdrawal(50, DateTime.Now, "Coffee");
+            account.MakeWithdrawal(5, DateTime.Now, "Tea");
+            account.MakeWithdrawal(120, DateTime.Now, "Food");
+
+
             Console.WriteLine(account.Balance);
 
             //account.MakeWithdrawal(-3000000, DateTime.Now, "coba mencuri");
@@ -26,8 +32,8 @@ namespace MySuperBank
             //    Console.WriteLine(e.ToString());
             //}
 
-            account.MakeWithdrawal(50000, DateTime.Now, "beli pizza");
-            Console.WriteLine(account.Balance);
+            // account.MakeWithdrawal(50000, DateTime.Now, "beli pizza");
+            // Console.WriteLine(account.Balance);
 
             Console.WriteLine(account.GetAccountStory());
         }
