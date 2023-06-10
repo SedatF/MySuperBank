@@ -1,5 +1,6 @@
 ﻿using BankStuffLibrary;
 using System;
+using Humanizer;
 
 
 namespace MySuperBank
@@ -8,6 +9,12 @@ namespace MySuperBank
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(3501.ToWords());
+
+            //Console.WriteLine("car".Pluralize());
+            //Console.WriteLine("pant".Pluralize());
+            //Console.WriteLine("house".Pluralize());
+
             var account = new BankAccount("Sedat", 10000);
             Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance}");
             account.MakeWithdrawal(50, DateTime.Now, "Coffee");
